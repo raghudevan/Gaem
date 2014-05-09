@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Gaem</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body id="body">
+        <!--Choose char information-->
+        <h2 align = "center">The game which has no name</h2>
+        <h3>Choose your battle type: </h3>
+        <div>
+            <table border = "2">
+                <caption>Dual</caption> 
+                <tr>
+                    <td>Base Attack</td>
+                    <td>Start Hit points</td>
+                    <td>Base Armor</td>
+                </tr>    
+                <tr>
+                    <td>1</td>
+                    <td>10</td>
+                    <td>1</td>
+                </tr>
+            </table>
+            
+            <table border = "2">
+                <caption>Shield and Sword</caption>
+                <tr>
+                    <td>Base Attack</td>
+                    <td>Start Hit points</td>
+                    <td>Base Armor</td>
+                    </tr>
+                <tr>
+                    <td>1</td>
+                    <td>10</td>
+                    <td>1</td>
+                </tr>
+            </table>
+        </div>
+        <br/>
+        <input type="radio" name="type" value="dual_wielding" onclick="confirmation(value)">Choose Dual Wielding</input>
+        <br/>
+        <input type="radio" name="type" value="shield_sword" onclick="confirmation(value)">Choose Shield and Sword</input>
+        
+    </body>
+    <script type="text/javascript" src="jscript.js"></script>
+</html>

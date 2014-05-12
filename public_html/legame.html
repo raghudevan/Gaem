@@ -9,16 +9,18 @@ and open the template in the editor.
         <title>Endless Tower</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script type="text/javascript" src="leGameScript.js"></script>
     </head>
-    <body>
-        <h3>Welcome to The Endless tower~</h3>
-        <p id="p1"></p>
+    <body id="game_body">
+        <h3 id="welcome">Welcome to The Endless tower~</h3>
         <br/>
+        Your class: <span id="className"> </span>
+        Player Stats : <span id="playerHP"></span>HP 
+        <span id="playerArmor"></span>Armor
+        <span id="playerDamage"></span>Weapon Damage
         
+        <!--Show rules here, then have a button to enter Endless Tower--> 
+        <input type="button" name="enterET" onclick="enterET()"/>
     </body>
-    <script type="text/javascript" src="jscript.js">
-        window.onload = function(){
-            document.getElementById("p1").innerHTML = "Chosen battle type: " + player_value;
-        }
-    </script>
 </html>

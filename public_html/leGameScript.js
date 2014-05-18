@@ -3,17 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-var classInf = new Array();
-
 $(function(){
-    var classInfo = 
-    [
-        $_GET["playerClass"],
-        $_GET["playerHP"],
-        $_GET["playerArmor"],
-        $_GET["playerDamage"]
-    ];
-    classInf = classInfo;
+    playerInfo = $_GET["playerInfo"].split('/');
+    showInfo(playerInfo);
 });
 
 var $_GET = {};
@@ -26,9 +18,14 @@ document.location.search.replace(/\??(?:([^=]+)=([^&]*)&?)/g, function () {
     $_GET[decode(arguments[1])] = decode(arguments[2]);
 });
 
+function showInfo(playerInfo){
+    //$("#test").append(playerInfo);
+    $("#className").html(playerInfo[0]);
+    $("#playerHP").html(playerInfo[1]);
+    $("#playerArmor").html(playerInfo[2]);
+    $("#playerDamage").html(playerInfo[3]);
+}
+
 function enterET(){
-    window.location.href = "theTower.html?playerClass=" + classInfo[1]
-                           + "?playerHP=" + classInfo[2] 
-                           + "?playerArmor=" + classInfo[3]
-                           + "?playerDamage=" + classInfo[4];
+    window.location.href = "theTower.html?playerInfo=" + $_GET["playerInfo"] + "/" + 1;
 }

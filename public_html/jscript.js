@@ -8,28 +8,27 @@
 
 var classInformation = 
 [
-    {className:"Dual Weilding",HP:10,Armour:1,Damage:2},
-    {className:"Sword and Shield",HP:10,Armour:2,Damage:1} 
+    {className:"Dual Weilding",HP:10,Armor:1,Damage:2},
+    {className:"Sword and Shield",HP:10,Armor:2,Damage:1} 
 ];
 
 $(function(){
     drawClassTable();
     drawChooseClass();
     
-    $("[name=selectClass]").on("click",function(){
+    $("[name=selectClass]").click(function(){
         var playerClass = "";
         var playerHP;
         var playerArmor;
         var playerDamage;
         if(window.confirm("Are you sure?")){
            playerClass = classInformation[parseInt($(this).attr("class"))].className;
-           playerHP = classclassInformation[parseInt($(this).attr("class"))].HP;
-           playerArmor = classclassInformation[parseInt($(this).attr("class"))].Armor;
-           playerDamage = classclassInformation[parseInt($(this).attr("class"))].Damage;
-           window.location.href = "legame.html?playerClass=" + playerClass 
-                                  + "?playerHp=" + playerHP
-                                  + "?playerArmor=" + playerArmor
-                                  + "?playerDamage" + playerDamage;
+           playerHP = classInformation[parseInt($(this).attr("class"))].HP;
+           playerArmor = classInformation[parseInt($(this).attr("class"))].Armor;
+           playerDamage = classInformation[parseInt($(this).attr("class"))].Damage;
+           
+            window.location.href = "legame.html?playerInfo=" + playerClass + "/"
+                                  + playerHP + "/" + playerArmor + "/" + playerDamage;
         }
            
     });
@@ -40,7 +39,7 @@ function drawClassTable()
     for(var i=0; i<classInformation.length; i++)
     {
         var rowHTML = "";
-        rowHTML = "<tr><td>"+classInformation[i].className+"</td><td>"+classInformation[i].HP+"</td><td>"+classInformation[i].Armour+"</td> <td>"+classInformation[i].Damage+"</td></tr>";
+        rowHTML = "<tr><td>"+classInformation[i].className+"</td><td>"+classInformation[i].HP+"</td><td>"+classInformation[i].Armor+"</td> <td>"+classInformation[i].Damage+"</td></tr>";
         $("#classTable tbody").append(rowHTML);
         
     }

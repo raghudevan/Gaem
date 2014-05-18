@@ -12,15 +12,18 @@ and open the template in the editor.
         <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
         <script type="text/javascript" src="leGameScript.js"></script>
     </head>
+    
     <body id="game_body">
         <h3 id="welcome">Welcome to The Endless tower~</h3>
         <br/>
-        Your class: <span id="className"> </span>
-        Player Stats : <span id="playerHP"></span>HP 
-        <span id="playerArmor"></span>Armor
-        <span id="playerDamage"></span>Weapon Damage
-        
+        <div id="test"></div>
+        Your class: <span id="className"> </span><br/>
+        Player Stats :<br/>  
+        Hit Points:<span id="playerHP"></span> &nbsp;
+        Armor:<span id="playerArmor"></span> &nbsp;
+        Weapon Damage:<span id="playerDamage"></span> &nbsp;
+        <br/>
         <!--Show rules here, then have a button to enter Endless Tower--> 
-        <input type="button" name="enterET" onclick="enterET()"/>
+        <input type="button" name="enterET" onclick="enterET()" value="Enter ET"></input>
     </body>
 </html>

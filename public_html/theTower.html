@@ -6,13 +6,23 @@ and open the template in the editor.
 -->
 <html>
     <head>
-        <title></title><!--The floor level goes here-->
+        <title>The Tower</title><!--The floor level goes here-->
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
         <script type="text/javascript" src="leTower.js"></script>
     </head>
     <body>
+        <div id="test"></div>
+        
+        <h1 id="level">Level: <span id="spanLevel"></span> </h1>
+            
+        <div id="player">
+            Player Hit Points : <span id="playerHP"></span> 
+            Player Armor : <span id="playerArmor"></span>
+            Player Damage : <span id="playerDamage"></span>
+        </div>
+        <br/>    
         <div id="monster">
             
         </div>
@@ -23,5 +33,6 @@ and open the template in the editor.
             </div>
             <!--can add others later-->
         </div>
+        <input type="button" name="clickHere" value="Click to increment level" onclick="increment()"></input>
     </body>
 </html>

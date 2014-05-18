@@ -3,7 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+var $_GET = {};
 
+document.location.search.replace(/\??(?:([^=]+)=([^&]*)&?)/g, function () {
+    function decode(s) {
+        return decodeURIComponent(s.split("+").join(" "));
+    }
+
+    $_GET[decode(arguments[1])] = decode(arguments[2]);
+});
 
 var monsterClass =
 [
@@ -12,12 +20,26 @@ var monsterClass =
     {monsterLvl:"Large", monsterHP: 50, monsterArmor: 10, monsterDamage: 10}
 ];
 
-var levelStatus = 
-[
-    {currentLevel: 1},
-    {numberOfSmall: 0, numberOfMedium : 0, numberofLarge: 0}
-];
+var playerInfo = $_GET["playerInfo"].split('/');
+var level = parseInt(playerInfo[4]);
+var playerHP = parseInt(playerInfo[1]);
+var playerArmor = parseInt(playerInfo[2]);
+var playerDamage = parseInt(playerInfo[3]);
 
-function generateLevel(){
-    
+//className, playerHP, playerArmor, playerDamage, playerLevel
+$(function(){
+    showInfo();
+});
+
+function showInfo(){
+    //$("#test").append(playerInfo);
+    $("#spanLevel").html(level);
+    $("#playerHP").html(playerHP);
+    $("#playerArmor").html(playerArmor);
+    $("#playerDamage").html(playerDamage);
+}
+
+function increment(){
+    level++;
+    $("#spanLevel").html(level);
 }
